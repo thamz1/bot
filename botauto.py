@@ -29,11 +29,11 @@ useragent = ['Mozilla/4.0 (compatible; MSIE 5.0; SunOS 5.10 sun4u; X11)',
 referer	= ['http://google.com','http://bing.com','http://facebook.com','http://twitter.com']
 link_invation= 'https://doraemon18gitar.blogspot.com/2020/08/kunci-gitar-kupuja-puja-ipank.html'
  
-def Autoclicker(proxy1):
+def Autoclicker(proxy):
     try:
-	proxy = proxy1.split(":")
-        print 'Auto Click Using proxy :',proxy1
-	proxy_set = urllib2.ProxyHandler({"http" : "%s:%d" % (proxy[0], int(proxy[1]))})
+	proxy = proxy.split(":")
+        print 'Auto Click Using proxy :',proxy
+	proxy_set = urllib2.ProxyHandler({"http" : "%s:%d" % (proxy[0], int(proxy[]))})
 	opener = urllib2.build_opener(proxy_set, urllib2.HTTPHandler)
 	opener.addheaders = [('User-agent', random.choice(useragent)),
 						('Referer', random.choice(referer))]
