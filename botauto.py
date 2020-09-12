@@ -25,17 +25,13 @@ useragent = ['Mozilla/4.0 (compatible; MSIE 5.0; SunOS 5.10 sun4u; X11)',
 		   'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; ZoomSpider.net bot; .NET CLR 1.1.4322)',
 		   'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; QihooBot 1.0 qihoobot@qihoo.net)',
 		'Mozilla/4.0 (compatible; MSIE 5.0; Windows ME) Opera 5.11 [en]']
- 
+
 referer	= ['http://google.com','http://bing.com','http://facebook.com','http://twitter.com']
-link_invation= 'https://doraemon18gitar.blogspot.com/2020/08/kunci-gitar-kupuja-puja-ipank.html'
- 
+link_invation= 'http://cash111.com/ref.php?page=act/ref&invcod=90386'
+
 def Autoclicker(proxy1):
     try:
 	proxy = proxy1.split(":")
-	proxy_info = {
-            'host' : proxy[0],
-            'port' : int(proxy[1])
-        }
         print 'Auto Click Using proxy :',proxy1
 	proxy_set = urllib2.ProxyHandler({"http" : "%s:%d" % (proxy[0], int(proxy[1]))})
 	opener = urllib2.build_opener(proxy_set, urllib2.HTTPHandler)
@@ -43,16 +39,16 @@ def Autoclicker(proxy1):
 						('Referer', random.choice(referer))]
 	urllib2.install_opener(opener)
 	f = urllib2.urlopen(link_invation)
-	if "https://doraemon18gitar.blogspot.com" in f.read():
+	if "Cash111.com" in f.read():
 	   print "[*] Link invation was clicked..."
 	else:
 	   print "[*] Link invation not clicked !"
            print "[!] Proxy failed"
- 
+
     except:
            print "[!] Proxy Error "
            pass
- 
+
 def loadproxy():
     try:
 	get_file = open(proxylisttext, "r")
@@ -67,7 +63,7 @@ def loadproxy():
     except IOError:
 	print "\n[-] Error: Check your proxylist path\n"
 	sys.exit(1)
- 
+
 def main():
    print """
 #################################
