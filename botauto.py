@@ -32,6 +32,10 @@ link_invation= 'https://doraemon18gitar.blogspot.com/2020/08/kunci-gitar-kupuja-
 def Autoclicker(proxy1):
     try:
 	proxy = proxy1.split(":")
+	 proxy_info = {
+            'host' : proxy[0],
+            'port' = int(proxy[1])
+        }
         print 'Auto Click Using proxy :',proxy1
 	proxy_set = urllib2.ProxyHandler({"http" : "%s:%d" % (proxy[0], int(proxy[1]))})
 	opener = urllib2.build_opener(proxy_set, urllib2.HTTPHandler)
