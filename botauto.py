@@ -32,9 +32,9 @@ link_invation= 'https://doraemon18gitar.blogspot.com/2020/08/kunci-gitar-kupuja-
 def Autoclicker(proxy1):
     try:
 	proxy = proxy1.split(":")
-	 proxy_info = {
+	proxy_info = {
             'host' : proxy[0],
-            'port' = int(proxy[1])
+            'port' : int(proxy[1])
         }
         print 'Auto Click Using proxy :',proxy1
 	proxy_set = urllib2.ProxyHandler({"http" : "%s:%d" % (proxy[0], int(proxy[1]))})
@@ -43,7 +43,7 @@ def Autoclicker(proxy1):
 						('Referer', random.choice(referer))]
 	urllib2.install_opener(opener)
 	f = urllib2.urlopen(link_invation)
-	if "Cash111.com" in f.read():
+	if "https://doraemon18gitar.blogspot.com" in f.read():
 	   print "[*] Link invation was clicked..."
 	else:
 	   print "[*] Link invation not clicked !"
